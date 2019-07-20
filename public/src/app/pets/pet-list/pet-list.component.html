@@ -1,0 +1,25 @@
+<a routerLink="new" class = "button" mat-raised-button color="accent" >Add a Pet to the shelter!</a>
+<div class="list">
+  <table table mat-table class="sortable">
+   <thead>
+     <tr>
+       <th>Pet Name</th>
+       <th>Pet Type</th>
+       <th>Actions</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor = 'let pet of pets' class="item">
+       <td>{{pet?.name}}</td>
+       <td>{{pet?.type}}</td>
+       <td><button mat-raised-button [routerLink]="['edit', pet._id]">EDIT</button>
+           <button mat-raised-button [routerLink]="['details', pet._id]">DETAILS</button>
+        </td>
+     </tr>
+   </tbody>
+ </table>
+ <div class="spacer">
+   <p class="info-text mat-body-1" *ngIf="pets.length <=0 ">No pets added yet!</p>
+ </div>
+</div>
+

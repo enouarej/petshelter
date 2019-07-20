@@ -1,0 +1,15 @@
+table{
+  margin: auto;
+}
+
+.list{
+  margin-top: 20px;
+}
+
+.spacer{
+  margin-left: 700px;
+}
+
+td, th{
+  padding: 10px;
+}

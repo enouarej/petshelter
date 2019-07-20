@@ -1,0 +1,71 @@
+<mat-card>
+  <h3>Edit {{pet?.name}}'s data!</h3>
+  <form (submit)='onSubmit($event, petForm)' #petForm = 'ngForm' autocomplete="off">
+
+    <mat-form-field>
+      <input matInput
+      type="text"
+      name = "name"
+      required
+      [ngModel] = "pet?.name"
+      #name = "ngModel"
+      placeholder="Pet's Name">
+      <mat-error *ngIf="name.invalid">Please enter a pet's name!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+      type="text"
+      name = "type"
+      required
+      [ngModel]="pet?.type"
+      #type = "ngModel"
+      placeholder="Pet's type">
+      <mat-error *ngIf="type.invalid">Please enter a pet's type!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput
+      type="text"
+      name = "description"
+      required
+      [ngModel]="pet?.description"
+      #description = "ngModel"
+      placeholder="Pet's description"></textarea>
+      <mat-error *ngIf="description.invalid">Please enter some description about the pet!</mat-error>
+    </mat-form-field>
+    <div class="skills">
+      <mat-form-field>
+        <input matInput
+        type="text"
+        name = "skill_one"
+        required
+        [ngModel]="pet?.skill_one"
+        #skill_one = "ngModel"
+        placeholder="Skill one">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+        type="text"
+        name = "skill_two"
+        required
+        [ngModel]="pet?.skill_two"
+        #skill_two = "ngModel"
+        placeholder="Skill two">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+        type="text"
+        name = "skill_three"
+        required
+        [ngModel]="pet?.skill_three"
+        #skill_three = "ngModel"
+        placeholder="Skill three">
+        <button
+        mat-raised-button
+        color = "accent"
+        type = "submit"
+        >UPDATE</button>
+      </mat-form-field>
+  </div>
+  </form>
+  <button mat-raised-button routerLink="/">HOME</button>
+</mat-card>

@@ -1,0 +1,73 @@
+<mat-card>
+  <h3>Know of a pet needing a home?</h3>
+  <form (submit)='onSubmit($event, petForm)' #petForm = 'ngForm' autocomplete="off">
+
+    <mat-form-field>
+      <input matInput
+      type="text"
+      name = "name"
+      required
+      ngModel
+      #name = "ngModel"
+      placeholder="Pet's Name">
+      <mat-error *ngIf="name.invalid">Please enter a pet's name!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+      type="text"
+      name = "type"
+      required
+      ngModel
+      #type = "ngModel"
+      placeholder="Pet's type">
+      <mat-error *ngIf="type.invalid">Please enter a pet's type!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput
+      type="text"
+      name = "description"
+      required
+      ngModel
+      #description = "ngModel"
+      placeholder="Pet's description"></textarea>
+      <mat-error *ngIf="description.invalid">Please enter some description about the pet!</mat-error>
+    </mat-form-field>
+    <div class="skills">
+      <mat-form-field>
+        <input matInput
+        type="text"
+        name = "skill_one"
+        required
+        ngModel
+
+        #skill_one = "ngModel"
+        placeholder="Skill one">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+        type="text"
+        name = "skill_two"
+        required
+        ngModel
+        #skill_two = "ngModel"
+        placeholder="Skill two">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+        type="text"
+        name = "skill_three"
+        required
+        ngModel
+        #skill_three = "ngModel"
+        placeholder="Skill three">
+        <button
+        mat-raised-button
+        color = "accent"
+        type = "submit"
+        >ADD</button>
+      </mat-form-field>
+  </div>
+  </form>
+  <mat-error>{{err}}</mat-error>
+  <button mat-raised-button routerLink="/">RESET</button>
+</mat-card>

@@ -1,0 +1,18 @@
+<div class="details">
+  <h3 *ngIf="pet">Details for {{pet?.name}} </h3>
+    <h5> Name :</h5>
+    <p> {{ pet?.name }} </p>
+    <h5> Type:</h5>
+    <p> {{ pet?.type }} </p>
+    <h5> Description:</h5>
+    <p> {{ pet?.description }} </p>
+    <h5> Skills:</h5>
+    <p> {{ pet?.skill_one }} | {{ pet?.skill_two }} | {{ pet?.skill_three }} </p>
+    <h5>Likes:</h5>
+    <p>{{ pet?.likes }}</p>
+    <button mat-raised-button at-raised-button color="accent" (click)='onDelete(pet._id)'>Adopt This Pet</button>
+    <button mat-raised-button [disabled]="clicked" (click)='onLike(pet._id); clicked = true' >Like</button>
+    <button mat-raised-button routerLink="/">HOME</button>
+</div>
+
+
